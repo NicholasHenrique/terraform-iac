@@ -10,10 +10,10 @@ variable "environment" {
 
 variable "account_number" {
   type    = string
-  default = "9371-8518-7804"
+  default = "937185187804"
 }
 
-variable "region" {
+variable "aws_region" {
   type    = string
   default = "us-east-2"
 }
