@@ -1,6 +1,6 @@
 variable "base_bucket_name" {
   type    = string
-  default = "datalake-nicholas-henrique-de-tf"
+  default = "datalake-nicholas-henrique-de"
 }
 
 variable "environment" {
