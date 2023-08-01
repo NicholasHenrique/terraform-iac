@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "datalake" {
-  bucket = "${var.base_bucket_name}-${var.environment}-${var.account_number}"
+  bucket = "datalake-${var.environment}-${var.base_bucket_name}"
 }
 
 resource "aws_s3_bucket_ownership_controls" "datalake_ownership" {
@@ -19,7 +19,7 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "datalake_encrypti
   bucket = aws_s3_bucket.datalake.id
   rule {
     apply_server_side_encryption_by_default {
-      sse_algorithm = "AES256" #SSE-S3
+      sse_algorithm = "AES256"
     }
   }
 }
