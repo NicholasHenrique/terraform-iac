@@ -1,5 +1,5 @@
 resource "aws_iam_role" "lambda" {
-  name = "AWSLambdaRole"
+  name = "TesteLambdaRole"
 
   assume_role_policy = <<EOF
 {
@@ -19,7 +19,7 @@ EOF
 }
 
 resource "aws_iam_policy" "lambda" {
-  name        = "AWSLambdaBasicExecutionRolePolicy"
+  name        = "TesteLambdaBasicExecutionRolePolicy"
   path        = "/"
   description = "Provides write permissions to CloudWatch Logs, S3 buckets and EMR Steps"
 
@@ -52,14 +52,14 @@ resource "aws_iam_policy" "lambda" {
         },
         {
           "Action": "iam:PassRole",
-          "Resource": ["arn:aws:iam::127012818163:role/EMR_DefaultRole",
-                       "arn:aws:iam::127012818163:role/EMR_EC2_DefaultRole"],
+          "Resource": ["arn:aws:iam::937185187804:role/EMR_DefaultRole",
+                       "arn:aws:iam::937185187804:role/EMR_EC2_DefaultRole"],
           "Effect": "Allow"
         }
     ]
 }
 EOF
-}
+} # dentro de "PassRole" em "Resource", trocar pelo ID da sua conta
 
 resource "aws_iam_role_policy_attachment" "lambda_attach" {
   role       = aws_iam_role.lambda.name
