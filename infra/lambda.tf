@@ -10,3 +10,14 @@ resource "aws_lambda_function" "execute_emr" {
 
   runtime = "python3.8"
 }
+
+data "aws_lambda_invocation" "lambda_create_emr" {
+  function_name = aws_lambda_function.execute_emr.function_name
+  input = jsonencode({
+    key1 = "value1"
+  })
+}
+
+output "lambda_create_emr_output" {
+  value = data.aws_lambda_invocation.lambda_create_emr.result
+}

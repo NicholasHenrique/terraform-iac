@@ -38,4 +38,5 @@ jobs:
         cd infra
         $COMMAND_IAC init
         $COMMAND_IAC validate
+        $COMMAND_IAC import aws_s3_bucket.datalake datalake-prod-tf-nicholas-henrique-de
         $COMMAND_IAC plan
