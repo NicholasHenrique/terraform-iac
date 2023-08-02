@@ -19,6 +19,6 @@ enem = (
     .write
     .mode("overwrite")
     .format("parquet")
-    .partitionBy("year")
+    .partitionBy("NU_ANO")
     .save("s3://datalake-prod-tf-nicholas-henrique-de/enem/staging/")
 )

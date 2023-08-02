@@ -1,4 +1,7 @@
 .vscode
 *.csv
+infra/.terraform/
+infra/.terraform.lock.hcl
 infra/glue_crawler.tf
 etl/job_glue.py
+infra/lambda_function_payload.zip
