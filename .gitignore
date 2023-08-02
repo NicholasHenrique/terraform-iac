@@ -1,1 +1,4 @@
 .vscode
+*.csv
+infra/glue_crawler.tf
+etl/job_glue.py

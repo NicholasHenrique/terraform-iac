@@ -27,7 +27,11 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: us-east-2
 
-    - name: IaC Apply
+    - name: Build Lambda package
+      run: |
+        sh scripts/build_lambda_package.sh
+
+    - name: IaC Test
       env:
         COMMAND_IAC: terraform
       run: |
